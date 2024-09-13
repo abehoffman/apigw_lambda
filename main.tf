@@ -1,7 +1,6 @@
 # Where the zipped packages are stored for retrieval by lambda
 resource "aws_s3_bucket" "packages" {
   bucket        = var.packages_bucket
-  acl           = "private"
   force_destroy = true
 }
 
