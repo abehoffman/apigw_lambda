@@ -26,12 +26,16 @@ resource "aws_lambda_function" "api" {
   runtime          = "python3.8"
   source_code_hash = "${data.aws_s3_bucket_object.api_zip_hash.body}"
   handler          = "index.handler"
-  timeout          = 30
+  timeout          = var.timeout
   memory_size      = 512
 
   depends_on = [
     aws_cloudwatch_log_group.api_logs,
   ]
+
+  environment {
+    variables = var.environment_variables
+  }
 }
 
 resource "aws_lambda_permission" "api_gateway_api" {

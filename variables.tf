@@ -17,3 +17,15 @@ variable "packages_bucket" {
   type = string
   description = "The bucket to store the packages in."
 }
+
+variable "timeout" {
+  type = number
+  description = "The timeout for the lambda."
+  default = 30
+}
+
+variable "environment_variables" {
+  type = map(string)
+  description = "The environment variables for the lambda function."
+  default = {}
+}

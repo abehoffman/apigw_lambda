@@ -68,6 +68,14 @@ module "api" {
 
   # The key of the package
   package_key = <package_key>
+
+  # The timeout of the lambda (OPTIONAL)
+  timeout = <timeout>
+
+  # The environment variables for the lambda (OPTIONAL)
+  environment_variables = {
+    <variable> = <value>
+  }
 }
 ```
 
