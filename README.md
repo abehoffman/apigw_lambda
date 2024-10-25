@@ -76,6 +76,9 @@ module "api" {
   environment_variables = {
     <variable> = <value>
   }
+
+  # The runtime for the lambda (OPTIONAL)
+  runtime = <runtime>
 }
 ```
 

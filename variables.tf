@@ -29,3 +29,10 @@ variable "environment_variables" {
   description = "The environment variables for the lambda function."
   default = {}
 }
+
+variable "runtime" {
+  type = string
+  description = "The runtime for the lambda funciton."
+
+  default = "python3.8"
+}

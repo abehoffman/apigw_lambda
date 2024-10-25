@@ -22,7 +22,7 @@ resource "aws_lambda_function" "api" {
   function_name    = var.api_name
   description      = "Lambda for ${var.api_name}"
   role             = var.api_iam_role_arn
-  runtime          = "python3.8"
+  runtime          = var.runtime
   source_code_hash = "${data.aws_s3_bucket_object.api_zip_hash.body}"
   handler          = "index.handler"
   timeout          = var.timeout
